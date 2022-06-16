@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');// inject css and js file in to html
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     entry: {
@@ -19,16 +19,6 @@ module.exports = {
         aggregateTimeout: 200,
         poll: 1000,
     },
-    // devServerL: {
-    //     static: {
-    //         directory: path.join(__dirname, 'public'),
-    //     },
-    //     compress: true,
-    //     port: 8002,
-    //     devMiddleware:{
-
-    //     }
-    // },
     output: {
         path: path.resolve(__dirname, "public"),
         filename: "js/[name].[contenthash].js",
@@ -46,7 +36,7 @@ module.exports = {
             minify: true
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash].css',
+            filename: 'css/[name].[contenthash].css',//with htmlwebpackplugin -> generate link tag
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [

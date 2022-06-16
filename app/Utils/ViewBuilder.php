@@ -17,6 +17,7 @@ class ViewBuilder
     protected $query = null;
     protected $options = null;
 
+
     public function __construct()
     {
         $this->view = 'pages.list.index';
