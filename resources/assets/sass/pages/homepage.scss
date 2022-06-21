@@ -1,0 +1,391 @@
+:root {
+    --body-bg: #18dae0;
+    --cloud-bg: white;
+}
+
+
+.home-container {
+    margin-top: 100px;
+    display: block;
+    width: 100%;
+    height: 80vh;
+    background-color: aqua;
+}
+
+.sky {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* display: flex; */
+}
+
+.cloud-container {
+    display: flex;
+    gap: 40px;
+    animation: cloud-running 8s linear infinite;
+}
+
+.raining-cloud {
+    width: 180px;
+    height: 100px;
+    display: block;
+
+    background-image:
+        radial-gradient(circle 25px at 25px 25px, var(--cloud-bg) 100%, transparent 0),
+        radial-gradient(circle 50px at 50px 50px, var(--cloud-bg) 100%, transparent 0),
+        radial-gradient(circle 25px at 25px 25px, var(--cloud-bg) 100%, transparent 0),
+        radial-gradient(circle 15px at 15px 15px, var(--cloud-bg) 100%, transparent 0),
+        linear-gradient(var(--cloud-bg) 50px, transparent 0);
+    background-size: 50px 50px, 100px 75px, 50px 50px, 30px 32px, 136px 20px;
+    background-repeat: no-repeat;
+    background-position: 0px 30px, 30px 0px, 113px 29px, 147px 50px, 23px 60px;
+    /* position: relative; */
+
+}
+
+.panda-wrapper {
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: none;
+    background-repeat: no-repeat;
+    margin: 0 auto 0px;
+    bottom: 70px;
+    animation: fly 1.5s infinite;
+    position: absolute;
+}
+
+.sun {
+    width: 15rem;
+    height: 15rem;
+    display: block;
+    /* background-color: white; */
+    background-image:
+        /* radial-gradient(ellipse at top, #e6d964cc, transparent),
+    radial-gradient(ellipse at bottom, #d6b91349, transparent), */
+        radial-gradient(circle 7px at 98px 121px, rgb(255, 153, 0) 100%, transparent 0),
+        radial-gradient(circle 7px at 98px 128px, rgb(255, 153, 0) 100%, transparent 0),
+        radial-gradient(circle 7px at 100px 120px, black 100%, transparent 0),
+        radial-gradient(circle 7px at 100px 129px, black 100%, transparent 0),
+        radial-gradient(circle 60px at 100px 100px, rgb(255, 153, 0) 100%, transparent 0);
+    background-repeat: no-repeat;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 50%;
+}
+
+.sun-glass::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 10px;
+    border-radius: 25px 20px;
+    background-color: rgb(255, 238, 0);
+    background-image:
+        linear-gradient(45deg,
+            black 20%, black 25%,
+            rgb(255, 238, 0) 26%, rgb(255, 238, 0) 36%,
+            black 37%, black 47%,
+            rgb(255, 238, 0) 48%, rgb(255, 238, 0) 58%,
+            black 59%, black 69%,
+            rgb(255, 238, 0) 70%, rgb(255, 238, 0) 80%);
+    top: 54px;
+    left: 52px;
+    border: 2px solid;
+    transform: rotate(-23deg);
+}
+
+.sun-glass {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: black; */
+    position: absolute;
+
+    top: 30%;
+}
+
+.sun-glass__left {
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 15% 15% 50% 50%;
+}
+
+.sun-glass__right {
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 15% 15% 50% 50%;
+}
+
+
+.panda-head {
+    z-index: 90;
+    position: absolute;
+    width: 190px;
+    height: 170px;
+    top: 20px;
+    left: 105px;
+    background-image:
+        radial-gradient(circle 10px at 65px 119px, white 100%, transparent 0),
+        radial-gradient(circle 10px at 80px 119px, white 100%, transparent 0),
+        radial-gradient(circle 10px at 65px 120px, black 100%, transparent 0),
+        radial-gradient(circle 10px at 80px 120px, black 100%, transparent 0),
+        /* mouth */
+        radial-gradient(ellipse 20px 10px, pink 100%, transparent 0),
+        radial-gradient(ellipse 20px 10px, pink 100%, transparent 0),
+        /* cheek before */
+        radial-gradient(circle 40px, white 100%, transparent 0),
+        radial-gradient(circle 40px, white 100%, transparent 0),
+        /* cheek */
+
+        radial-gradient(circle 74px, white 100%, transparent 0),
+        radial-gradient(circle 75px, black 100%, transparent 0),
+        /* head */
+        radial-gradient(circle 10px, white 100%, transparent 0),
+        radial-gradient(circle 10px, white 100%, transparent 0),
+        radial-gradient(ellipse 20px 20px, black 100%, transparent 0),
+        radial-gradient(ellipse 20px 20px, black 100%, transparent 0);
+    /* ear */
+    background-position:
+        25px 0px,
+        25px 0px,
+        40px 0px,
+        10px 0px,
+        /* mouth */
+        50px 20px,
+        -50px 20px,
+        /* before cheek */
+        42px 20px,
+        -42px 20px,
+        /* cheek */
+
+        0px 13px,
+        0px 13px,
+        /* head */
+        -50px -52px,
+        50px -52px,
+        -50px -55px,
+        50px -55px;
+    /* ear*/
+    background-repeat: no-repeat;
+}
+
+.panda-nose {
+    z-index: 91;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: black;
+    top: 110px;
+    border-radius: 40% 40% 90% 90%;
+    left: 190px;
+}
+
+
+.panda-eye {
+    z-index: 92;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    display: flex;
+    /* background-color: red; */
+}
+
+.panda-eye__left {
+    width: 60px;
+    height: 40px;
+    background-image:
+        radial-gradient(circle 2px at 30px 15px, white 100%, transparent 0),
+        radial-gradient(circle 7px at 26px 15px, black 100%, transparent 0);
+    border-radius: 70% 30% 70% 50%;
+    background-color: rgb(78, 75, 75);
+}
+
+.panda-eye__right {
+    width: 60px;
+    height: 40px;
+    margin-left: 30px;
+    border-radius: 30% 70% 30% 50%;
+    background-image:
+
+        radial-gradient(circle 2px at 6px 15px, white 100%, transparent 0),
+        radial-gradient(circle 7px at 10px 15px, black 100%, transparent 0);
+    background-color: rgb(78, 75, 75);
+}
+
+.panda-stomach {
+    position: absolute;
+    width: 120px;
+    height: 160px;
+    border-radius: 270px 270px 200px 200px;
+    display: block;
+    z-index: 80;
+    background-color: white;
+    background-image:
+        radial-gradient(ellipse 5px 5px at 61px 120px, white 100%, transparent 0%),
+        radial-gradient(ellipse 5px 5px at 60px 120px, black 100%, transparent 0%);
+    z-index: 99;
+    top: 170px;
+    left: 140px;
+}
+
+.panda-hand {
+    position: absolute;
+    width: 260px;
+    height: 100px;
+    top: 160px;
+    left: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.panda-hand__left {
+    width: 160px;
+    height: 60px;
+    background-color: black;
+    transform: rotate(45deg);
+    border-radius: 40% 70% 40% 70%;
+    animation: happy 0.5s linear infinite;
+
+}
+
+.panda-hand__right {
+    width: 160px;
+    height: 60px;
+    background-color: black;
+    transform: rotate(-45deg);
+    border-radius: 70% 40% 70% 40%;
+    animation: happy-reverse 0.5s linear infinite;
+}
+
+.panda-leg {
+    position: absolute;
+    width: 280px;
+    height: 200px;
+    /* background-color: gray; */
+    top: 270px;
+    left: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.panda-leg__left {
+    width: 120px;
+    height: 80px;
+    background-color: black;
+    background-image:
+        radial-gradient(ellipse 2px 10px at 50px 9px, white 100%, transparent),
+        radial-gradient(ellipse 2px 10px at 45px 9px, white 100%, transparent),
+        radial-gradient(ellipse 2px 10px at 40px 9px, white 100%, transparent),
+        radial-gradient(ellipse 5px 10px at 3px 40px, white 100%, transparent);
+    animation: happy 0.5s linear infinite;
+    border-bottom: 4px solid white;
+    /* transform: rotate(0deg); */
+    border-radius: 90% 40% 40% 90%;
+
+}
+
+.panda-leg__right {
+    width: 120px;
+    height: 80px;
+    background-color: black;
+    background-image:
+        radial-gradient(ellipse 2px 10px at 55px 9px, white 100%, transparent),
+        radial-gradient(ellipse 2px 10px at 60px 9px, white 100%, transparent),
+        radial-gradient(ellipse 2px 10px at 65px 9px, white 100%, transparent),
+        radial-gradient(ellipse 5px 10px at 120px 40px, white 100%, transparent);
+    /* transform: rotate(-9deg); */
+    animation: happy-reverse 0.5s linear infinite;
+    border-radius: 40% 90% 90% 40%;
+    border-bottom: 4px solid white;
+}
+
+.neck-lace {
+    width: 0px;
+    height: 0px;
+    /* border-radius: ; */
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 40px solid red;
+    display: block;
+    position: absolute;
+    top: 183px;
+    left: 160px;
+    z-index: 99;
+}
+
+.earth {
+    width: 100vw;
+    height: 10vh;
+    background-color: burlywood;
+    position: absolute;
+    bottom: 25px;
+}
+
+// @keyframes happy {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+
+//     50% {
+//         transform: rotate(24deg);
+//     }
+
+//     100% {
+//         transform: rotate(30deg);
+//     }
+// }
+
+// @keyframes happy-reverse {
+//     0% {
+//         transform: rotate(-0deg);
+//     }
+
+//     50% {
+//         transform: rotate(-25deg);
+//     }
+
+//     100% {
+//         transform: rotate(-29deg);
+//     }
+// }
+
+// @keyframes fly {
+//     20% {
+//         height: 450px;
+
+//     }
+
+//     40% {
+//         height: 500px;
+//     }
+
+//     60% {
+//         height: 550px;
+//     }
+
+//     80% {
+//         height: 500px;
+//     }
+
+//     100% {
+//         height: 400px;
+//     }
+
+// }
+
+@keyframes cloud-running {
+    100% {
+        margin-left: 80%;
+    }
+
+}
