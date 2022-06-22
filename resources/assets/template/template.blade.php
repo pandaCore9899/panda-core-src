@@ -27,6 +27,7 @@
         </div>
     @else
         @yield('content')
+        @include('layouts.footer')
     @endif
 </body>
 

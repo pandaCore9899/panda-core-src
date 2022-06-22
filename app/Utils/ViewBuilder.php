@@ -82,11 +82,11 @@ class ViewBuilder
     public function __invoke()
     {
         $params = [
-            'data' => $this->data,
-            'model' => $this->model,
-            'columns' => $this->columns,
-            'options' => $this->options,
-            'limit_options' => $this->limit_options
+            'data' => $this->data?? [],
+            'model' => $this->model?? [],
+            'columns' => $this->columns?? [],
+            'options' => $this->options?? [],
+            'limit_options' => $this->limit_options?? []
         ];
         $params = array_merge($params, $this->vars->toArray());
         return view($this->view, $params);
