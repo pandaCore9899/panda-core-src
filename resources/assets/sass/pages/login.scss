@@ -1,0 +1,156 @@
+.login-option {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0;
+}
+
+.login-logo{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    img{
+        width: 200px;
+        height: 50px;
+    }
+}
+.login-container {
+    background-color: aqua;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.login-form {
+    z-index: 90;
+
+    &__wrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        padding-top: 15%;
+        justify-content: center;
+        justify-items: center;
+
+    }
+
+    &__title {
+        width: 100%;
+        text-align: center;
+        height: 40px;
+        @include flex(center, center);
+        font-size: 1.5em;
+        font-style: italic;
+    }
+
+    &__input {
+        width: 100%;
+        height: 60px;
+        // background-color: red;
+        display: flex;
+        padding: 10px 0px;
+    }
+
+    &__form {
+        label {
+            min-width: 90px;
+            display: block;
+            font-size: 1em;
+            color: black;
+            display: flex;
+            padding: 10px;
+            font-weight: 500;
+        }
+
+        input {
+            min-width: 240px;
+        }
+
+        button {
+            font-size: 1rem;
+            font-weight: 500;
+            display: block;
+            min-width: 100px;
+            border-radius: 2px;
+            height: 40px;
+            background-color: rgb(110, 209, 209);
+            color: white;
+            border: none;
+            margin : 0px auto 0px
+        }
+
+        a {
+            color: black !important;
+            text-decoration: underline !important;
+            font-weight: 300;
+            margin-right: 0px;
+            padding-top: 10px;
+            display: block;
+            font-style: italic;
+            text-align: end;
+            &:hover {
+                color: rgb(17, 127, 230) !important;
+            }
+        }
+
+        // background-color: #18dae0;
+        padding: 20px;
+    }
+
+    display: block;
+    background-color: antiquewhite;
+    width: 400px;
+    height: 430px;
+    border-radius: 10px;
+    // margin: 200px auto 0px;
+}
+
+.signup {
+    &-sns {
+        // width: 100%;
+        height: 50px;
+        // background-color: aqua;
+        justify-content: center;
+        justify-items: center;
+        display: flex;
+        gap: 10px;
+    }
+
+    &-general {
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+        min-width: 100px;
+        border-radius: 2px;
+        height: 40px;
+        background-color: rgb(110, 209, 209);
+        color: white;
+        border: none;
+    }
+    &-google {
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+        min-width: 100px;
+        border-radius: 2px;
+        height: 40px;
+        background-color: rgb(236, 116, 116);;
+        // color: rgb(236, 116, 116);
+        color: white;
+    }
+    &-facebook {
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+        min-width: 100px;
+        border-radius: 2px;
+        height: 40px;
+        background-color: rgb(2, 145, 240);
+        color: white;
+        border: none;
+    }
+}
