@@ -8,7 +8,7 @@
             'selected' => $selected,
         ])
     </div>
-    <div class="panda-dropdown__container {{ $container_class ?? '' }} {{ $sub_selected ? 'panda-show' : '' }}">
+    <div class="panda-dropdown__container panda-sidebar-dropdown__container {{ $container_class ?? '' }} {{ $sub_selected ? 'panda-sidebar__selected' : '' }}">
         @if ($has_sub)
             @include('layouts.sidebar.items.item_dropdown')
         @endif

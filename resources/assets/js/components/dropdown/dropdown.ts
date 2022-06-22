@@ -12,12 +12,18 @@ function dropdownSidebar(element: HTMLElement) {
     }
     $('.panda-dropdown-sidebar-icon').children().text("chevron_right")
     icon.text(after_icon);
+    var panel = <HTMLElement>element.nextElementSibling;
     let containers = $('.panda-dropdown__container').not(divContainer);
-    containers.removeClass('panda-show')
-    if (divContainer.hasClass('panda-show')) {
-        divContainer.removeClass('panda-show')
+    containers.removeClass('panda-sidebar__selected')
+    console.log(panel.style.maxHeight);
+    console.log($(panel).css('max-height'))
+    if ($(panel).hasClass('panda-sidebar__selected')) {
+        // $(panel).attr('style','max-height:0px !important');
+        // console.log('set to null')
+        // panel.style.maxHeight = null;
+        $(panel).removeClass('panda-sidebar__selected')
     } else {
-        divContainer.addClass('panda-show')
+        $(panel).addClass('panda-sidebar__selected')
     }
 }
 export default { dropdownSidebar };

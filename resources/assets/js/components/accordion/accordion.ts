@@ -34,7 +34,7 @@ const next = (element: HTMLElement, icon_show: string = null, icon_hide: string 
         }
     }
     var panel = <HTMLElement>element.nextElementSibling;
-    console.log(panel)
+    // console.log(panel)
     if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
     } else {

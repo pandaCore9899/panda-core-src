@@ -36,7 +36,7 @@ const outside = () => {
         let modal = $('#myModal')
         if (event.target instanceof Element ) {
             if (!modal.has(event.target).length && !$(event.target).hasClass('__show_modal') ){
-                console.log(event.target)
+                // console.log(event.target)
                 modal.remove()
             }
        }

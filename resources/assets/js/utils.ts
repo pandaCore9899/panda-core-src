@@ -11,7 +11,7 @@ export function setCssAttributes(selector: string | string[], attrs: CssAttribut
     let selectors = (typeof selector == 'string') ? [selector] : selector;
     for (selector of selectors) {
         for (let attr of attrs) {
-            console.log(selector, attr.key, attr.val)
+            // console.log(selector, attr.key, attr.val)
             $(selector).css(attr.key, attr.val)
         }
     }
