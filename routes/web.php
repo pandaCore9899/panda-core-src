@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/login',[LoginController::class, 'index']);
-// Route::get('/signup',[])
 Route::get('/', function () {
     return view(viewIndex('pages.home'));
 })->name('home');
