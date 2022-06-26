@@ -13,6 +13,6 @@
         <div class="panda-navbar__account__dropdown__item"><i class="material-icons">info</i><span>Account Information</span></div>
         <div class="panda-navbar__account__dropdown__item"><i class="material-icons">favorite</i><span>My Favorite</span></div>
         <div class="panda-navbar__account__dropdown__item"><i class="material-icons">vpn_key</i><span>Change Password</span></div>
-        <div class="panda-navbar__account__dropdown__item"><i class="material-icons">logout</i><span>Log out</span></div>
+        <a class="panda-navbar__account__dropdown__item" href="{{route('logout')}}"><i class="material-icons">logout</i><span>Log out</span></a>
     </div>
 </div>

@@ -9,7 +9,7 @@
 
             </div>
         </div>
-        <div class="sky" style="position: absolute;z-index:80;margin-top:200px">
+        <div class="sky" style="position: absolute;z-index:80;height:100%">
 
             <div class="cloud-container" style="margin-left: 100px;">
                 <div class="raining-cloud"></div>
@@ -28,19 +28,21 @@
         <div class="login-form__wrapper">
             <div class="login-form lightning-box-shadow-all">
                 <div class="login-form__title">Panda Core</div>
-                <div class="login-form__form  ">
+                <form class="login-form__form " method="POST" action="{{route('login')}}">
+                    @csrf
+                    @method('POST')
                     <div class="login-form__input">
                         <label for="email">Email</label>
-                        <input type="email" placeholder="Enter your email" id="email">
+                        <input type="email" placeholder="Enter your email" name="email">
                     </div>
                     <div class="login-form__input">
                         <label for="password">Password</label>
-                        <input type="password" placeholder="Enter your password" id="password">
+                        <input type="password" placeholder="Enter your password" name="password">
                     </div>
                     <button class="" type="submit">Login <i class="fa fa-arrow-right"></i></button>
                     <a href="/forgot_password">Forgot password ?</a>
                     <hr>
-                </div>
+                </form>
                 <div class="signup-sns">
                     <button class="signup-google">
                         <i style="color :white" class="fa fa-google"></i> Google
