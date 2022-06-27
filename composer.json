@@ -9,10 +9,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "fruitcake/laravel-cors": "^3.0",
+        "guzzlehttp/guzzle": "^7.4",
         "laravel/framework": "^9.0.0",
+        "laravel/passport": "^10.4",
+        "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "psy/psysh":"^0.11.5",
+        "psy/psysh": "^0.11.5",
         "symfony/console": "^6.0"
     },
     "require-dev": {
