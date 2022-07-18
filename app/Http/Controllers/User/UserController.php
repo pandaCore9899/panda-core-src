@@ -10,6 +10,7 @@ use App\Utils\ExcelManager;
 use App\Utils\Importer;
 use App\Utils\PandaPagination;
 use App\Utils\ViewBuilder;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -55,5 +56,14 @@ class UserController extends Controller
                 'show' => true
             ]
         ];
+    }
+    public function handleDataBeforeImport($data){
+
+        $newData = collect($data)->map(function ($user){
+            $user['password'] = Hash::make($user['password']);
+            return $user;
+        })->all(); 
+      
+        return $newData;
     }
 }

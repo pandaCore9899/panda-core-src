@@ -11,6 +11,24 @@ function checkAll(element: HTMLInputElement) {
     }
 }
 
+function check(element: HTMLInputElement) {
+
+    if (element.checked == false) {
+        $(this).prop('checked', false);
+    } else {
+        $(this).prop('checked', true);
+    }
+    let checkedItems =  $('input[name=item_check]:checked').length;
+
+    let checkBoxItems =  $('input[name=item_check]').length
+    if(checkedItems === checkBoxItems){
+        $('input[name=item_check_all]').prop('checked', true);
+    }else{
+        $('input[name=item_check_all]').prop('checked', false);
+    }
+   
+}
+
 function importItems(path: string) {
     console.log(path,);
     pandaAjax(path, null).then(res => {
@@ -42,8 +60,8 @@ function deleteItems() {
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    type: 'POST',
-                    url: path + '.delete',
+                    type: 'DELETE',
+                    url: path + '/delete',
                     data: {
                         'delete_all': true,
                     },
@@ -91,8 +109,8 @@ function deleteItems() {
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
-                        type: 'POST',
-                        url: path + '.delete',
+                        type: 'DELETE',
+                        url: path + '/delete',
                         data: {
                             'ids': ids
                         },
@@ -130,5 +148,6 @@ export default {
     checkAll,
     deleteItems,
     setLimit,
-    importItems
+    importItems,
+    check
 }

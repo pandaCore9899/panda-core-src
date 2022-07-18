@@ -11,12 +11,9 @@ use Illuminate\Support\Facades\Http;
 
 class LoginController extends Controller
 {
-    protected $limit_options = [4, 10, 50, 100, 500];
     public function index(Request $request)
     {
-        $builder = new ViewBuilder();
-        $builder->setView('pages.auth.login');
-        return $builder();
+        return view('pages.auth.login');
     }
 
     public function login(Request $req)
@@ -27,10 +24,10 @@ class LoginController extends Controller
             'password' => 'required|string'
         ]);
         if (!Auth::attempt($login)) {
-            return response(['message' => 'Invalid login credentials.']);
+            return back()->withErrors([
+                trans('static/login.invalid_email_or_password')
+            ]);
         }
-        $accessToken = Auth::user()->createToken('authToken')->accessToken;
-        Auth::user()->withAccessToken($accessToken);
         return redirect()->route('home');
     }
     public function logout(Request $req){

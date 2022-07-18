@@ -29,7 +29,7 @@ if (!function_exists('getMenuItems')) {
                 if (is_array($value)) {
                     foreach ($value as  $sub_value) {
                         if ($sub_value == $text) {
-                            $menu_item = trans('menu.pc.' . $key . '.' . $text . '.index');
+                            $menu_item = trans('menu.pc.' . $key . '.' . $text );
                             break;
                         }
                     }

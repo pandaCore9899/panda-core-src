@@ -26,8 +26,8 @@
                         @foreach ($data as $item)
                             <tr>
                                 @if (isset($item['id']))
-                                    <td style="width: 12px" class="fixed-first-column"><input class="select-row"
-                                            type="checkbox" _id="{{ $item['id'] }}" /></td>
+                                    <td style="width: 12px" class="fixed-first-column"><input class="select-row" name="item_check"
+                                            type="checkbox" _id="{{ $item['id'] }}" onclick="PANDA.list.check(this)" /></td>
                                 @endif
                                 @foreach ($columns as $col => $setting)
                                     <td>{{ $item[$col] }}</td>
@@ -50,7 +50,6 @@
                         <tbody>
                             @foreach ($data as $item)
                                 <tr>
-
                                     @if ($options->count() > 0)
                                         <td>
                                             @include('components.table.dropdown')

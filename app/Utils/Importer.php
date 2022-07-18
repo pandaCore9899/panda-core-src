@@ -137,7 +137,11 @@ trait Importer
         $data = session('data')[0];
 
         $data = remove_attribute($data, 'row');
+       
         try {
+            if(!function_exists('handleDataBeforeImport')){
+                $data = $this->handleDataBeforeImport($data);
+            }
             foreach ($data as $d) {
                 $this->model::create($d);
             }
